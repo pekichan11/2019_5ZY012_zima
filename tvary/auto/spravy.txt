@@ -1,0 +1,5 @@
+predneKoleso = new Kruh()
+
+kapota.zobraz()
+kapota.posunVodorovne(100)
+kapota.zmenStrany(10, 20)
