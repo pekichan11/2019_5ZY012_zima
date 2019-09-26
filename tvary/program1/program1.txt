@@ -1,0 +1,33 @@
+poz = new Stvorec()
+poz.zobraz()
+poz.zmenFarbu("black")
+poz.zmenStranu(300)
+poz.posunVodorovne(-60)
+poz.posunZvisle(-50)
+
+kruh1 = new Kruh()
+
+kruh1.zobraz()
+kruh1.posunVodorovne(15)
+kruh1.zmenFarbu("white")
+
+kruh2 = new Kruh()
+kruh2.zobraz()
+kruh2.zmenFarbu("white")
+kruh2.posunZvisle(30)
+kruh2.posunVodorovne(5)
+kruh2.zmenPriemer(50)
+
+kruh3 = new Kruh()
+kruh3.zobraz()
+kruh3.zmenFarbu("white")
+kruh3.posunZvisle(80)
+kruh3.posunVodorovne(-10)
+kruh3.zmenPriemer(80)
+
+
+nos = new Trojuholnik()
+nos.zobraz()
+nos.zmenRozmery(-5, 10)
+nos.zmenFarbu("red")
+nos.posunZvisle(65)
