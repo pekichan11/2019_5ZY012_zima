@@ -1,0 +1,21 @@
+
+b = new Obdlznik()
+b.zmenStrany(10, 50)
+b.posunZvisle(30)
+b.zobraz()
+
+a = new Kruh()
+a.posunVodorovne(30)
+a.zobraz()
+
+c = new Obdlznik()
+c.posunZvisle(40)
+c.posunVodorovne(-15)
+c.zmenStrany(40, 10)
+c.zobraz()
+
+d = new Trojuholnik()
+d.posunZvisle(100)
+d.posunVodorovne(15)
+d.zmenRozmery(50, 50)
+d.zobraz()
