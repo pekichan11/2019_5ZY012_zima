@@ -33,6 +33,10 @@ public class AutomatMHD {
         return this.cenaListka;
     }
     
+    public void zmenCenuListka(int novaCena) {
+        this.cenaListka = novaCena;
+    }
+    
     /**
      * Vrati doteraz vlozenu ciastku
      */
