@@ -1,15 +1,27 @@
-
-/**
- * Write a description of class Kalkulacka here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Kalkulacka {
-    /**
-     * Constructor for objects of class Kalkulacka
-     */
-    public Kalkulacka() {
-        // initialise instance variables
+    private double medzicislo;
+    
+    public Kalkulacka(double prveCislo) {
+        this.medzicislo = prveCislo;
+    }
+    
+    public void scitaj(double operand) {
+        this.medzicislo += operand;
+    }
+    
+    public void odcitaj(double operand) {
+        this.medzicislo -= operand;
+    }
+    
+    public void vynasob(double operand) {
+        this.medzicislo *= operand;
+    }
+    
+    public void vydel(double operand) {
+        this.medzicislo /= operand;
+    }
+    
+    public double vypluj() {
+        return this.medzicislo;
     }
 }
