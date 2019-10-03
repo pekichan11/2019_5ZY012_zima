@@ -52,7 +52,7 @@ public class AutomatMHD {
      * Prijme mincu danej hodnoty od kupujuceho
      */
     public void vlozMincu(int hodnotaMince) {
-        this.vlozenaCiastka = this.vlozenaCiastka + hodnotaMince;
+        this.vlozenaCiastka += hodnotaMince;
     }
     
     /**
@@ -72,15 +72,36 @@ public class AutomatMHD {
         System.out.println();
         
         // pripocitaj cenu listka k trzbe
-        this.trzba = this.trzba + this.cenaListka;
+        this.trzba += this.cenaListka;
         // zniz vlozenu ciastku
-        this.vlozenaCiastka = this.vlozenaCiastka - this.cenaListka;
+        this.vlozenaCiastka -= this.cenaListka;
     }
     
     public void vratZostatok() {
-        System.out.print("Vraciam ti: ");
-        System.out.print(this.vlozenaCiastka);
-        System.out.println(" centov");
+        System.out.println("Vraciam ti: ");
+        
+        System.out.format("%d x 2€%n", this.vlozenaCiastka / 200);
+        this.vlozenaCiastka %= 200;
+        
+        System.out.format("%d x 1€%n", this.vlozenaCiastka / 100);
+        this.vlozenaCiastka %= 100;
+        
+        System.out.format("%d x 50c%n", this.vlozenaCiastka / 50);
+        this.vlozenaCiastka %= 50;
+        
+        System.out.format("%d x 20c%n", this.vlozenaCiastka / 20);
+        this.vlozenaCiastka %= 20;
+        
+        System.out.format("%d x 10c%n", this.vlozenaCiastka / 10);
+        this.vlozenaCiastka %= 10;
+        
+        System.out.format("%d x 5c%n", this.vlozenaCiastka / 5);
+        this.vlozenaCiastka %= 5;
+        
+        System.out.format("%d x 2c%n", this.vlozenaCiastka / 2);
+        this.vlozenaCiastka %= 2;
+        
+        System.out.format("%d x 1c%n", this.vlozenaCiastka);
         
         this.vlozenaCiastka = 0;
     }
