@@ -1,1 +1,11 @@
 5 + 3 * 8 - 10 / 2 =       27
+
+
+
+
+kalk = new Kalkulacka(5)
+kalk.scitaj(3)
+kalk.vynasob(8)
+kalk.odcitaj(10)
+kalk.vydel(2)
+kalk.vypluj()
