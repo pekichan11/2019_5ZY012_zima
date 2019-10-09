@@ -42,4 +42,12 @@ public class Kalkulacka {
     public void ms() {
         this.pamat = this.medzicislo;
     }
+    
+    public void mrc() {
+        if (this.medzicislo != this.pamat) {
+            this.medzicislo = this.pamat;
+        } else {
+            this.pamat = 0;
+        }
+    }
 }
