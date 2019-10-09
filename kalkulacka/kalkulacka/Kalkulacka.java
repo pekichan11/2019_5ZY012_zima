@@ -2,30 +2,36 @@ public class Kalkulacka {
     private double medzicislo;
     private double pamat;
     private boolean mrcStlacene;
+    private double operand;
 
     public Kalkulacka(double prveCislo) {
         this.medzicislo = prveCislo;
         this.pamat = 0;
         this.mrcStlacene = false;
+        this.operand = 0;
+    }
+    
+    public void setOperand(double operand) {
+        this.operand = operand;
     }
 
-    public void scitaj(double operand) {
-        this.medzicislo += operand;
+    public void scitaj() {
+        this.medzicislo += this.operand;
         this.mrcStlacene = false;
     }
 
-    public void odcitaj(double operand) {
-        this.medzicislo -= operand;
+    public void odcitaj() {
+        this.medzicislo -= this.operand;
         this.mrcStlacene = false;
     }
 
-    public void vynasob(double operand) {
-        this.medzicislo *= operand;
+    public void vynasob() {
+        this.medzicislo *= this.operand;
         this.mrcStlacene = false;
     }
 
-    public void vydel(double operand) {
-        this.medzicislo /= operand;
+    public void vydel() {
+        this.medzicislo /= this.operand;
         this.mrcStlacene = false;
     }
 
@@ -39,7 +45,7 @@ public class Kalkulacka {
     }
 
     public void mr() {
-        this.medzicislo = this.pamat;
+        this.operand = this.pamat;
         this.mrcStlacene = false;
     }
 
@@ -58,7 +64,7 @@ public class Kalkulacka {
             this.pamat = 0;
             this.mrcStlacene = false;
         } else {
-            this.medzicislo = this.pamat;
+            this.operand = this.pamat;
             this.mrcStlacene = true;
         }
     }
