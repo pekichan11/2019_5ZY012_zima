@@ -33,7 +33,9 @@ public class Kalkulacka {
                 break;
         }
         this.mrcStlacene = false;
-        this.predchadzajucaOperacia = operacia;
+        if (operacia != '=') {
+            this.predchadzajucaOperacia = operacia;
+        }
     }
 
     public double getVysledok() {
