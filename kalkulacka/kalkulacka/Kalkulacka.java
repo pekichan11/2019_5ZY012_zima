@@ -3,12 +3,14 @@ public class Kalkulacka {
     private double pamat;
     private boolean mrcStlacene;
     private double operand;
+    private char predchadzajucaOperacia;
 
     public Kalkulacka(double prveCislo) {
         this.medzicislo = prveCislo;
         this.pamat = 0;
         this.mrcStlacene = false;
         this.operand = 0;
+        this.predchadzajucaOperacia = '?';
     }
     
     public void setOperand(double operand) {
@@ -16,23 +18,98 @@ public class Kalkulacka {
     }
 
     public void scitaj() {
-        this.medzicislo += this.operand;
+        switch (this.predchadzajucaOperacia) {
+            case '+':
+                this.medzicislo += this.operand;
+                break;
+            case '-':
+                this.medzicislo -= this.operand;
+                break;
+            case '*':
+                this.medzicislo *= this.operand;
+                break;
+            case '/':
+                this.medzicislo /= this.operand;
+                break;
+        }
         this.mrcStlacene = false;
+        this.predchadzajucaOperacia = '+';
     }
 
     public void odcitaj() {
-        this.medzicislo -= this.operand;
+        switch (this.predchadzajucaOperacia) {
+            case '+':
+                this.medzicislo += this.operand;
+                break;
+            case '-':
+                this.medzicislo -= this.operand;
+                break;
+            case '*':
+                this.medzicislo *= this.operand;
+                break;
+            case '/':
+                this.medzicislo /= this.operand;
+                break;
+        }
         this.mrcStlacene = false;
+        this.predchadzajucaOperacia = '+';
     }
 
     public void vynasob() {
-        this.medzicislo *= this.operand;
+        switch (this.predchadzajucaOperacia) {
+            case '+':
+                this.medzicislo += this.operand;
+                break;
+            case '-':
+                this.medzicislo -= this.operand;
+                break;
+            case '*':
+                this.medzicislo *= this.operand;
+                break;
+            case '/':
+                this.medzicislo /= this.operand;
+                break;
+        }
         this.mrcStlacene = false;
+        this.predchadzajucaOperacia = '*';
     }
 
     public void vydel() {
-        this.medzicislo /= this.operand;
+        switch (this.predchadzajucaOperacia) {
+            case '+':
+                this.medzicislo += this.operand;
+                break;
+            case '-':
+                this.medzicislo -= this.operand;
+                break;
+            case '*':
+                this.medzicislo *= this.operand;
+                break;
+            case '/':
+                this.medzicislo /= this.operand;
+                break;
+        }
         this.mrcStlacene = false;
+        this.predchadzajucaOperacia = '/';
+    }
+
+    public void rovnaSa() {
+        switch (this.predchadzajucaOperacia) {
+            case '+':
+                this.medzicislo += this.operand;
+                break;
+            case '-':
+                this.medzicislo -= this.operand;
+                break;
+            case '*':
+                this.medzicislo *= this.operand;
+                break;
+            case '/':
+                this.medzicislo /= this.operand;
+                break;
+        }
+        this.mrcStlacene = false;
+        this.predchadzajucaOperacia = '=';
     }
 
     public double getVysledok() {
