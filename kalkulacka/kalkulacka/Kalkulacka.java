@@ -17,7 +17,7 @@ public class Kalkulacka {
         this.operand = operand;
     }
 
-    public void scitaj() {
+    public void vypocitaj(char operacia) {
         switch (this.predchadzajucaOperacia) {
             case '+':
                 this.medzicislo += this.operand;
@@ -33,83 +33,7 @@ public class Kalkulacka {
                 break;
         }
         this.mrcStlacene = false;
-        this.predchadzajucaOperacia = '+';
-    }
-
-    public void odcitaj() {
-        switch (this.predchadzajucaOperacia) {
-            case '+':
-                this.medzicislo += this.operand;
-                break;
-            case '-':
-                this.medzicislo -= this.operand;
-                break;
-            case '*':
-                this.medzicislo *= this.operand;
-                break;
-            case '/':
-                this.medzicislo /= this.operand;
-                break;
-        }
-        this.mrcStlacene = false;
-        this.predchadzajucaOperacia = '+';
-    }
-
-    public void vynasob() {
-        switch (this.predchadzajucaOperacia) {
-            case '+':
-                this.medzicislo += this.operand;
-                break;
-            case '-':
-                this.medzicislo -= this.operand;
-                break;
-            case '*':
-                this.medzicislo *= this.operand;
-                break;
-            case '/':
-                this.medzicislo /= this.operand;
-                break;
-        }
-        this.mrcStlacene = false;
-        this.predchadzajucaOperacia = '*';
-    }
-
-    public void vydel() {
-        switch (this.predchadzajucaOperacia) {
-            case '+':
-                this.medzicislo += this.operand;
-                break;
-            case '-':
-                this.medzicislo -= this.operand;
-                break;
-            case '*':
-                this.medzicislo *= this.operand;
-                break;
-            case '/':
-                this.medzicislo /= this.operand;
-                break;
-        }
-        this.mrcStlacene = false;
-        this.predchadzajucaOperacia = '/';
-    }
-
-    public void rovnaSa() {
-        switch (this.predchadzajucaOperacia) {
-            case '+':
-                this.medzicislo += this.operand;
-                break;
-            case '-':
-                this.medzicislo -= this.operand;
-                break;
-            case '*':
-                this.medzicislo *= this.operand;
-                break;
-            case '/':
-                this.medzicislo /= this.operand;
-                break;
-        }
-        this.mrcStlacene = false;
-        this.predchadzajucaOperacia = '=';
+        this.predchadzajucaOperacia = operacia;
     }
 
     public double getVysledok() {
