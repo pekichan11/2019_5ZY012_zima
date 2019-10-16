@@ -48,6 +48,6 @@ public class DigitalneHodiny {
      * Vrati cas vo forme retazca.
      */
     public String getCas() {
-        return this.hodiny.getHodnotaAkoRetazec() + ":" + this.minuty.getHodnotaAkoRetazec() + ":" + this.sekundy.getHodnotaAkoRetazec();
+        return this.hodiny.getHodnotaAkoRetazecV12Hod() + ":" + this.minuty.getHodnotaAkoRetazec() + ":" + this.sekundy.getHodnotaAkoRetazec();
     }
 }

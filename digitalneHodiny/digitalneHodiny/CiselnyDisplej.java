@@ -53,6 +53,18 @@ public class CiselnyDisplej {
         }
     }
     
+    public String getHodnotaAkoRetazecV12Hod() {
+        int hodnota12 = this.hodnota % 12;
+        if (hodnota12 == 0) {
+            hodnota12 = 12;
+        }
+        if (hodnota12 < 10) {
+            return "0" + hodnota12;
+        } else {
+            return "" + hodnota12;
+        }
+    }
+    
     /**
      * Zvacsi hodnotu na ciselnom displeji o hodnotu jedna. Ak dosiahne hornu
      * hranicu, pokracuje znovu od nuly.
