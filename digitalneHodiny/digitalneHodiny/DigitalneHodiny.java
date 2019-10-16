@@ -12,9 +12,10 @@ public class DigitalneHodiny {
      * polnoci (00:00).
      */
     public DigitalneHodiny() {
-        this.hodiny = new CiselnyDisplej(24);
-        this.minuty = new CiselnyDisplej(60);
-        this.sekundy = new CiselnyDisplej(60);
+        this.hodiny = new CiselnyDisplej(1, 13);
+        this.hodiny.setHodnota(12);
+        this.minuty = new CiselnyDisplej(0, 60);
+        this.sekundy = new CiselnyDisplej(0, 60);
     }
     
     /**
@@ -48,6 +49,6 @@ public class DigitalneHodiny {
      * Vrati cas vo forme retazca.
      */
     public String getCas() {
-        return this.hodiny.getHodnotaAkoRetazecV12Hod() + ":" + this.minuty.getHodnotaAkoRetazec() + ":" + this.sekundy.getHodnotaAkoRetazec();
+        return this.hodiny.getHodnotaAkoRetazec() + ":" + this.minuty.getHodnotaAkoRetazec() + ":" + this.sekundy.getHodnotaAkoRetazec();
     }
 }

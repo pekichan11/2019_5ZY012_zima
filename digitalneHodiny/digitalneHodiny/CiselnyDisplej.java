@@ -5,6 +5,7 @@
  */
 public class CiselnyDisplej {
     private int hornaHranica;
+    private int dolnaHranica;
     private int hodnota;
     
     /**
@@ -13,9 +14,10 @@ public class CiselnyDisplej {
      * @param pthis.hornaHranica Predstavuje cislo, ktore hodnota ciselneho
      * displeja nemoze dosiahnut.
      */
-    public CiselnyDisplej(int hornaHranica) {
+    public CiselnyDisplej(int dolnaHranica, int hornaHranica) {
         this.hornaHranica = hornaHranica;
-        this.hodnota = 0;
+        this.dolnaHranica = dolnaHranica;
+        this.hodnota = dolnaHranica;
     }
     
     /**
@@ -34,7 +36,7 @@ public class CiselnyDisplej {
      * @param hodnota hodnota, ktora sa ma nastavit.
      */
     public void setHodnota(int hodnota) {
-        if (hodnota >= 0) {
+        if (hodnota >= this.dolnaHranica) {
             if (hodnota < this.hornaHranica) {
                 this.hodnota = hodnota;
             }
@@ -53,23 +55,14 @@ public class CiselnyDisplej {
         }
     }
     
-    public String getHodnotaAkoRetazecV12Hod() {
-        int hodnota12 = this.hodnota % 12;
-        if (hodnota12 == 0) {
-            hodnota12 = 12;
-        }
-        if (hodnota12 < 10) {
-            return "0" + hodnota12;
-        } else {
-            return "" + hodnota12;
-        }
-    }
-    
     /**
      * Zvacsi hodnotu na ciselnom displeji o hodnotu jedna. Ak dosiahne hornu
      * hranicu, pokracuje znovu od nuly.
      */
     public void krok() {
-        this.hodnota = (this.hodnota + 1) % this.hornaHranica;
+        this.hodnota++;
+        if (this.hodnota == this.hornaHranica) {
+            this.hodnota = this.dolnaHranica;
+        }
     }
 }
