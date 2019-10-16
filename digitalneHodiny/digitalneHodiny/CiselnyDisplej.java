@@ -37,7 +37,7 @@ public class CiselnyDisplej {
      */
     public void setHodnota(int hodnota) {
         if (hodnota >= this.dolnaHranica) {
-            if (hodnota < this.hornaHranica) {
+            if (hodnota <= this.hornaHranica) {
                 this.hodnota = hodnota;
             }
         }
@@ -61,7 +61,7 @@ public class CiselnyDisplej {
      */
     public void krok() {
         this.hodnota++;
-        if (this.hodnota == this.hornaHranica) {
+        if (this.hodnota > this.hornaHranica) {
             this.hodnota = this.dolnaHranica;
         }
     }
