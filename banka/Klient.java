@@ -8,4 +8,8 @@ public class Klient {
         this.meno = meno;
         this.banka = null;
     }
+    
+    public void zalozUcet(Banka banka) {
+        this.banka = banka;
+    }
 }
