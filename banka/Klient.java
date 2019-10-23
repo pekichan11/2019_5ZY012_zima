@@ -21,36 +21,36 @@ public class Klient {
         }
     }
     
-    public void vlozPeniaze(long sumaVCentoch) {
+    public void vlozPeniaze(double suma) {
         if (this.banka == null) {
             System.out.println("Najskor si zaloz ucet");
             return;
         }
         
-        if (sumaVCentoch <= 0) {
+        if (suma <= 0) {
             System.out.println("Vkladat ide iba kladnu ciastku");
             return;
         }
         
-        this.stavVCentoch += sumaVCentoch;
+        this.stavVCentoch += suma * 100;
     }
     
-    public void vyberPeniaze(long sumaVCentoch) {
+    public void vyberPeniaze(double suma) {
         if (this.banka == null) {
             System.out.println("Najskor si zaloz ucet");
             return;
         }
         
-        if (sumaVCentoch <= 0) {
+        if (suma <= 0) {
             System.out.println("Vyberat ide iba kladnu ciastku");
             return;
         }
         
-        if (this.stavVCentoch < sumaVCentoch) {
+        if (this.stavVCentoch < suma * 100) {
             System.out.println("Nemozes telo vybrat! Mas malo na ucte");
             return;
         }
         
-        this.stavVCentoch -= sumaVCentoch;
+        this.stavVCentoch -= suma * 100;
     }
 }
