@@ -1,3 +1,4 @@
+
 public class Klient {
     private Banka banka;
     private String meno;
@@ -52,5 +53,9 @@ public class Klient {
         }
         
         this.stavVCentoch -= suma * 100;
+    }
+    
+    public double getStav() {
+        return this.stavVCentoch / 100.;
     }
 }
