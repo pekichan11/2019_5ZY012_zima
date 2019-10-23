@@ -12,4 +12,12 @@ public class Klient {
     public void zalozUcet(Banka banka) {
         this.banka = banka;
     }
+    
+    public String getNazovBanky() {
+        if (this.banka != null) {
+            return this.banka.getNazov();
+        } else {
+            return null;
+        }
+    }
 }
