@@ -22,22 +22,30 @@ public class Klient {
     }
     
     public void vlozPeniaze(long sumaVCentoch) {
-        if (sumaVCentoch > 0) {
-            this.stavVCentoch += sumaVCentoch;
+        if (this.banka != null) {
+            if (sumaVCentoch > 0) {
+                this.stavVCentoch += sumaVCentoch;
+            } else {
+                System.out.println("Vkladat ide iba kladnu ciastku");
+            }
         } else {
-            System.out.println("Vkladat ide iba kladnu ciastku");
+            System.out.println("Najskor si zaloz ucet");
         }
     }
     
     public void vyberPeniaze(long sumaVCentoch) {
-        if (sumaVCentoch > 0) {
-            if (this.stavVCentoch >= sumaVCentoch) {
-                this.stavVCentoch -= sumaVCentoch;
+        if (this.banka != null) {
+            if (sumaVCentoch > 0) {
+                if (this.stavVCentoch >= sumaVCentoch) {
+                    this.stavVCentoch -= sumaVCentoch;
+                } else {
+                    System.out.println("Nemozes telo vybrat! Mas malo na ucte");
+                }
             } else {
-                System.out.println("Nemozes telo vybrat! Mas malo na ucte");
+                System.out.println("Vyberat ide iba kladnu ciastku");
             }
         } else {
-            System.out.println("Vyberat ide iba kladnu ciastku");
+            System.out.println("Najskor si zaloz ucet");
         }
     }
 }
