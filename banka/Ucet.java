@@ -2,29 +2,16 @@ public class Ucet {
     private Banka banka;
     private long stavVCentoch;
     
-    public Ucet() {
+    public Ucet(Banka banka) {
         this.stavVCentoch = 0;
-        this.banka = null;
-    }
-    
-    public void zalozUcet(Banka banka) {
         this.banka = banka;
     }
     
     public String getNazovBanky() {
-        if (this.banka != null) {
-            return this.banka.getNazov();
-        } else {
-            return null;
-        }
+        return this.banka.getNazov();
     }
     
     public void vlozPeniaze(double suma) {
-        if (this.banka == null) {
-            System.out.println("Najskor si zaloz ucet");
-            return;
-        }
-        
         if (suma <= 0) {
             System.out.println("Vkladat ide iba kladnu ciastku");
             return;
@@ -34,11 +21,6 @@ public class Ucet {
     }
     
     public void vyberPeniaze(double suma) {
-        if (this.banka == null) {
-            System.out.println("Najskor si zaloz ucet");
-            return;
-        }
-        
         if (suma <= 0) {
             System.out.println("Vyberat ide iba kladnu ciastku");
             return;
