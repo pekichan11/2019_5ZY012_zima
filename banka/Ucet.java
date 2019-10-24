@@ -2,11 +2,13 @@ public class Ucet {
     private Banka banka;
     private long stavVCentoch;
     private Klient vlastnik;
+    private String iban;
     
-    public Ucet(Banka banka, Klient vlastnik) {
+    public Ucet(Banka banka, Klient vlastnik, String iban) {
         this.stavVCentoch = 0;
         this.banka = banka;
         this.vlastnik = vlastnik;
+        this.iban = iban;
     }
     
     public Klient getVlastnik() {
