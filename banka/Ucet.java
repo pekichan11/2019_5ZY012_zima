@@ -1,10 +1,16 @@
 public class Ucet {
     private Banka banka;
     private long stavVCentoch;
+    private Klient vlastnik;
     
-    public Ucet(Banka banka) {
+    public Ucet(Banka banka, Klient vlastnik) {
         this.stavVCentoch = 0;
         this.banka = banka;
+        this.vlastnik = vlastnik;
+    }
+    
+    public Klient getVlastnik() {
+        return this.vlastnik;
     }
     
     public String getNazovBanky() {
