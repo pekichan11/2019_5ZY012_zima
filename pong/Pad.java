@@ -8,8 +8,13 @@
 public class Pad {
     private Obdlznik pad;
     private int poziciaY;
+    private Hra hra;
     
-    public Pad(boolean pravy) {
+    public Pad(boolean pravy, Hra hra) {
+        this.hra = hra;
+        
+        this.poziciaY = this.hra.getVyskaPola() / 2;
+        
         this.pad = new Obdlznik();
         this.pad.zmenStrany(5, 30);
         if (pravy) {
@@ -17,10 +22,8 @@ public class Pad {
         } else {
             this.pad.posunVodorovne(-60);
         }
-        this.pad.posunZvisle(85);
+        this.pad.posunZvisle(this.poziciaY - 65);
         this.pad.zobraz();
-        
-        this.poziciaY = 150;
     }
     
     public void posunHore() {
@@ -33,7 +36,7 @@ public class Pad {
     }
     
     public void posunDole() {
-        if (this.poziciaY >= 285) {
+        if (this.poziciaY >= this.hra.getVyskaPola() - 15) {
             return;
         }
         
