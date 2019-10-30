@@ -7,6 +7,7 @@
  */
 public class Pad {
     private Obdlznik pad;
+    private int poziciaY;
     
     public Pad(boolean pravy) {
         this.pad = new Obdlznik();
@@ -18,5 +19,25 @@ public class Pad {
         }
         this.pad.posunZvisle(85);
         this.pad.zobraz();
+        
+        this.poziciaY = 150;
+    }
+    
+    public void posunHore() {
+        if (this.poziciaY <= 15) {
+            return;
+        }
+        
+        this.pad.posunZvisle(-5);
+        this.poziciaY -= 5;
+    }
+    
+    public void posunDole() {
+        if (this.poziciaY >= 285) {
+            return;
+        }
+        
+        this.pad.posunZvisle(5);
+        this.poziciaY += 5;
     }
 }
