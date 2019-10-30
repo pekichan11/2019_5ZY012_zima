@@ -8,6 +8,13 @@ public class Hra {
         this.sirkaPola = sirkaPola;
         this.vyskaPola = vyskaPola;
         
+        Obdlznik pozadie = new Obdlznik();
+        pozadie.zmenFarbu("yellow");
+        pozadie.zmenStrany(sirkaPola, vyskaPola);
+        pozadie.posunVodorovne(-60);
+        pozadie.posunZvisle(-50);
+        pozadie.zobraz();
+        
         this.lavy = new Pad(false, this);
         this.pravy = new Pad(true, this);
     }
