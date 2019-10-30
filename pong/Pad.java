@@ -18,7 +18,7 @@ public class Pad {
         this.pad = new Obdlznik();
         this.pad.zmenStrany(5, 30);
         if (pravy) {
-            this.pad.posunVodorovne(235);
+            this.pad.posunVodorovne(this.hra.getSirkaPola() - 65);
         } else {
             this.pad.posunVodorovne(-60);
         }
