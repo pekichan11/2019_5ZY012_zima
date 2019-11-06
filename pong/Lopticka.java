@@ -22,6 +22,10 @@ public class Lopticka {
         this.lopticka.zobraz();
     }
     
+    public void znic() {
+        this.lopticka.skry();
+    }
+    
     public void posun() {
         this.poziciaX += this.smerX;
         this.poziciaY += this.smerY;
