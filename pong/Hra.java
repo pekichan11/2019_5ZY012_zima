@@ -39,6 +39,15 @@ public class Hra {
     
     public void tik() {
         this.lopticka.posun();
+        
+        switch (this.lopticka.getPozicia()) {
+            case "vlavo":
+                System.out.println("Lavy prehral");
+                break;
+            case "vpravo":
+                System.out.println("Pravy prehral");
+                break;
+        }
     }
     
     public int getSirkaPola() {
