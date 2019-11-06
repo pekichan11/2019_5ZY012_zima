@@ -37,6 +37,10 @@ public class Hra {
         this.pravy.posunDole();
     }
     
+    public void tik() {
+        this.lopticka.posun();
+    }
+    
     public int getSirkaPola() {
         return this.sirkaPola;
     }
