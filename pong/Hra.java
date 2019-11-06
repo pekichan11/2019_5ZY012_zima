@@ -1,6 +1,7 @@
 public class Hra {
     private Pad lavy;
     private Pad pravy;
+    private Lopticka lopticka;
     private int sirkaPola;
     private int vyskaPola;
     
@@ -17,6 +18,7 @@ public class Hra {
         
         this.lavy = new Pad(false, this);
         this.pravy = new Pad(true, this);
+        this.lopticka = new Lopticka(this);
     }
     
     public void posunDole() {
