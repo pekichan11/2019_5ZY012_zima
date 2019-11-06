@@ -51,4 +51,17 @@ public class Lopticka {
             return "stred";
         }
     }
+    
+    public boolean koliduje(Pad pad) {
+        int y1 = pad.getY1();
+        int y2 = pad.getY2();
+        int x1 = pad.getX1();
+        int x2 = pad.getX2();
+        
+        if (this.poziciaX >= x1 && this.poziciaX <= x2 && this.poziciaY >= y1 && this.poziciaY <= y2) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

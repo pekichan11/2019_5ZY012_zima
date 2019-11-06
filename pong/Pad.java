@@ -9,9 +9,12 @@ public class Pad {
     private Obdlznik pad;
     private int poziciaY;
     private Hra hra;
+    private boolean pravy;
     
     public Pad(boolean pravy, Hra hra) {
         this.hra = hra;
+        
+        this.pravy = pravy;
         
         this.poziciaY = this.hra.getVyskaPola() / 2;
         
@@ -42,5 +45,29 @@ public class Pad {
         
         this.pad.posunZvisle(5);
         this.poziciaY += 5;
+    }
+    
+    public int getY1() {
+        return this.poziciaY - 15;
+    }
+    
+    public int getY2() {
+        return this.poziciaY + 15;
+    }
+    
+    public int getX1() {
+        if (this.pravy) {
+            return this.hra.getSirkaPola() - 10;
+        } else {
+            return 0;
+        }
+    }
+    
+    public int getX2() {
+        if (this.pravy) {
+            return this.hra.getSirkaPola();
+        } else {
+            return 10;
+        }
     }
 }
