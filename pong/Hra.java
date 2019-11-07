@@ -65,4 +65,9 @@ public class Hra {
     public int getVyskaPola() {
         return this.vyskaPola;
     }
+    
+    public void spusti() {
+        new Manazer()
+            .spravujObjekt(this);
+    }
 }
