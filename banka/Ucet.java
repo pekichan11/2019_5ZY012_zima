@@ -46,6 +46,33 @@ public class Ucet {
         this.stavVCentoch -= suma * 100;
     }
     
+    public void prevedPeniaze(String cielIban, double suma) {
+        Ucet ucet = this.banka.getUcet(cielIban);
+        
+        if (ucet == null) {
+            System.out.println("Asi si zadal nespravny IBAN");
+            return;
+        }
+        
+        if (this.stavVCentoch < suma * 100) {
+            System.out.println("Nemozes telo vybrat! Mas malo na ucte");
+            return;
+        }
+        
+        if (ucet == this) {
+            System.out.println("Nemozes previest na vlastny ucet");
+            return;
+        }
+        
+        if (suma <= 0) {
+            System.out.println("Previest ide iba kladnu ciastku");
+            return;
+        }
+        
+        this.stavVCentoch -= suma * 100;
+        ucet.vlozPeniaze(suma);
+    }
+    
     public double getStav() {
         return this.stavVCentoch / 100.;
     }
