@@ -11,6 +11,10 @@ public class Ucet {
         this.iban = iban;
     }
     
+    public String getIban() {
+        return this.iban;
+    }
+    
     public Klient getVlastnik() {
         return this.vlastnik;
     }
