@@ -37,11 +37,7 @@ public class Dvere {
         this.suVybrane = true;
     }
     
-    public void zrusVyber() {
-        if (!this.suVybrane) {
-            System.out.println("Dvere nie su vybrane");
-            return;
-        }
+    public void zrusVyberAkTreba() {
         this.suVybrane = false;
     }
     
