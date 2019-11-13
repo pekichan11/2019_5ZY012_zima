@@ -22,4 +22,8 @@ public class Sutaz {
         
         this.dvere[cislo].vyber();
     }
+    
+    public void otvorDvere(int cislo) {
+        this.dvere[cislo].otvor();
+    }
 }
