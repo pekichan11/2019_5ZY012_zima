@@ -1,15 +1,17 @@
+import java.util.Random;
 
-/**
- * Write a description of class Sutaz here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Sutaz {
-    /**
-     * Constructor for objects of class Sutaz
-     */
+    private Dvere[] dvere;
+    
     public Sutaz() {
-        // initialise instance variables
+        this.dvere = new Dvere[3];
+        
+        Random nahodneCisla = new Random();
+        
+        int vyherneDvere = nahodneCisla.nextInt(this.dvere.length);
+        
+        for (int i = 0; i < this.dvere.length; i++) {
+            this.dvere[i] = new Dvere(i == vyherneDvere);
+        }
     }
 }
