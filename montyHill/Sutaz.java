@@ -15,12 +15,20 @@ public class Sutaz {
         }
     }
     
+    public boolean mozeVybratDvere(int cislo) {
+        return this.dvere[cislo].mozeVybrat();
+    }
+    
     public void vyberDvere(int cislo) {
         for (Dvere dvere : this.dvere) {
             dvere.zrusVyberAkTreba();
         }
         
         this.dvere[cislo].vyber();
+    }
+    
+    public boolean mozeOtvoritDvere(int cislo) {
+        return this.dvere[cislo].mozeOtvorit();
     }
     
     public void otvorDvere(int cislo) {

@@ -9,6 +9,10 @@ public class Dvere {
         this.suVybrane = false;
     }
     
+    public boolean mozeOtvorit() {
+        return !this.suOtvorene && !this.suVyherne && !this.suVybrane;
+    }
+    
     public void otvor() {
         if (this.suOtvorene) {
             System.out.println("Dvere uz su otvorene");
@@ -23,6 +27,10 @@ public class Dvere {
             return;
         }
         this.suOtvorene = true;
+    }
+    
+    public boolean mozeVybrat() {
+        return !this.suOtvorene && !this.suVybrane;
     }
     
     public void vyber() {
